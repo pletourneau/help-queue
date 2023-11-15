@@ -83,7 +83,7 @@ class TicketControl extends React.Component {
       currentlyVisibleState = (
         <EditTicketForm
           ticket={this.state.selectedTicket}
-          onEditTicket={this.handleEditingTicketInList} //dis right hur
+          onEditTicket={this.handleEditingTicketInList}
         />
       );
       buttonText = "Return to Ticket List";
