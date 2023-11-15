@@ -42,6 +42,13 @@ class TicketControl extends React.Component {
     });
   };
 
+  handleChangingSelectedTicket = (id) => {
+    const selectedTicket = this.state.mainTicketList.filter(
+      (ticket) => ticket.id === id
+    )[0];
+    this.setState({ selectedTicket: selectedTicket });
+  };
+
   //DELETE TICKET
   handleDeletingTicket = (id) => {
     const newMainTicketList = this.state.mainTicketList.filter(
@@ -53,6 +60,7 @@ class TicketControl extends React.Component {
     });
   };
 
+  //DEAL WITH BUTTON CLICK
   handleClick = () => {
     if (this.state.selectedTicket != null) {
       this.setState({
@@ -65,13 +73,6 @@ class TicketControl extends React.Component {
         formVisibleOnPage: !prevState.formVisibleOnPage,
       }));
     }
-  };
-
-  handleChangingSelectedTicket = (id) => {
-    const selectedTicket = this.state.mainTicketList.filter(
-      (ticket) => ticket.id === id
-    )[0];
-    this.setState({ selectedTicket: selectedTicket });
   };
 
   render() {
